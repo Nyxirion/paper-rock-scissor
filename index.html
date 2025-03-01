@@ -6,6 +6,22 @@
     <title>Paper, Rock, Scissor!</title>
 </head>
 <body>
-    <script></script>    
+    <script>
+        function getComputerChoice(){
+            max = 3;
+            let decision = Math.floor(Math.random() * max);
+
+            if (decision === 0){
+                return 'rock';
+            }
+            else if (decision === 1){
+                return 'paper';
+            }
+            else{
+                return 'scissor';
+            }
+        }
+
+    </script>    
 </body>
 </html>
