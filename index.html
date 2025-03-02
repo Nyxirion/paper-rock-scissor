@@ -7,8 +7,9 @@
 </head>
 <body>
     <script>
+        
         function getComputerChoice(){
-            max = 3;
+            const max = 3;
             let decision = Math.floor(Math.random() * max);
 
             if (decision === 0){
@@ -22,6 +23,98 @@
             }
         }
 
+        function getHumanChoice(){
+            user = prompt('Rock, Paper or Scissor ?');
+            user = user.toLowerCase();
+            if (user === 'rock'){
+                return 'rock';
+            }
+            else if (user === 'paper'){
+                return 'paper';
+            }
+            else if (user === 'scissor'){
+                return 'scissor';
+            }
+            else{
+                console.log('Entrada invalida');
+            }
+            return user;
+
+        }
+
+        
+
+        function playGame(){
+            let humanScore = 0;
+            let computerScore = 0;
+            function playRound(humanChoice, computerChoice) {
+            if (humanChoice === computerChoice){
+                console.log('Its a draw');
+                return;
+            }
+            
+            if (computerChoice === 'paper'){
+                if (humanChoice === 'rock'){
+                    console.log('Computer wins! Paper beats Rock');
+                    ++computerScore;
+                    return;
+                }
+                else if (humanChoice === 'scissor'){
+                    console.log('User wins Scissor beats Paper!');
+                    ++humanScore;
+                    return;
+                }
+            }
+            
+            if (computerChoice === 'rock'){
+                if (humanChoice === 'scissor'){
+                    console.log('Computer wins! Rock beats Scissor');
+                    ++computerScore;
+                    return;
+                }
+                else if (humanChoice === 'paper'){
+                    console.log('User wins! Paper beats Rock');
+                    ++humanScore;
+                    return;
+                }
+            }
+
+            if (computerChoice === 'scissor'){
+                if (humanChoice === 'paper'){
+                    console.log('Computer wins! Scissor beats Paper');
+                    ++computerScore;
+                    return;
+                }
+                else if (humanChoice === 'rock'){
+                    console.log('User wins! Rock beats Scissor');
+                    ++humanScore;
+                    return;
+                }
+            }
+        }
+
+        playRound(getHumanChoice(), getComputerChoice());
+        console.log(humanScore, computerScore);
+        playRound(getHumanChoice(), getComputerChoice());
+        console.log(humanScore, computerScore);
+        playRound(getHumanChoice(), getComputerChoice());
+        console.log(humanScore, computerScore);
+        playRound(getHumanChoice(), getComputerChoice());
+        console.log(humanScore, computerScore);
+        playRound(getHumanChoice(), getComputerChoice());
+        console.log(humanScore, computerScore);
+        if (humanScore > computerScore){
+            console.log('Congratulations, u win!!!');
+        }
+        else if (computerScore > humanScore){
+            console.log('Computer wins!!!');
+        }
+        else{
+            console.log('it-s a draw')
+        }
+        }
+
+        playGame();
     </script>    
 </body>
 </html>
