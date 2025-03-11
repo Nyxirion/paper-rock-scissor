@@ -1,0 +1,33 @@
+.display{
+    display:flex;
+    justify-content: center;
+    gap:50px;
+    margin-bottom: 16px;
+}
+.information2{
+    text-align: center;
+}
+
+#computer_points,
+#user_points
+{
+    text-align: center;
+}
+
+#menu{
+    display: flex;
+    justify-content: center;
+    gap:16px;
+    margin-bottom: 16px;
+}
+
+.reset_menu{
+    display: flex;
+    justify-content: center;
+}
+
+.information{
+    max-width: 200px;
+    text-align: center;
+}
+
